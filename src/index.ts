@@ -10,8 +10,11 @@ export const Config: Schema<Config> = Schema.object({})
 
 export const inject = ["ffmpeg", "silk"]
 
+export const using = "支持调用指令后发语音和回复语音两种方法"
+
 export function apply(ctx: Context) {
   ctx.command("倒放语音")
+    .usage("支持调用指令后发语音和回复语音两种方法")
     .action(async ({ session }) => {
       let elements
       if (session.quote) {
