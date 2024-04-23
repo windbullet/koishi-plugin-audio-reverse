@@ -9,13 +9,20 @@
     "dist"
   ],
   "license": "MIT",
-  "scripts": {},
+  "homepage": "https://github.com/windbullet/koishi-plugin-audio-reverse",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/windbullet/koishi-plugin-audio-reverse.git"
+  },
   "keywords": [
     "chatbot",
     "koishi",
     "plugin"
   ],
-  "devDependencies": {},
+  "devDependencies": {
+    "koishi-plugin-ffmpeg": "^1.1.0",
+    "koishi-plugin-silk": "^1.1.2"
+  },
   "peerDependencies": {
     "koishi": "^4.17.4"
   }
