@@ -5,6 +5,8 @@ import { } from 'koishi-plugin-silk'
 export const name = 'audio-reverse'
 export const inject = ['ffmpeg', 'silk']
 
+export const usage = '支持调用指令后发语音和回复语音两种方法'
+
 export interface Config { }
 
 export const Config: Schema<Config> = Schema.object({})
@@ -52,7 +54,7 @@ export function apply(ctx: Context) {
           .run('buffer')
       }
       if (reversedAudio.length === 0) return '音频倒放失败。'
-      
+
       return h.audio(reversedAudio, 'audio/vnd.wave')
     })
 }
