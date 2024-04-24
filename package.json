@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-audio-reverse",
-  "description": "倒放语音",
+  "description": "Rewind voice",
   "version": "0.1.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -17,13 +17,21 @@
   "keywords": [
     "chatbot",
     "koishi",
-    "plugin"
+    "plugin",
+    "audio",
+    "reverse"
   ],
   "devDependencies": {
     "koishi-plugin-ffmpeg": "^1.1.0",
-    "koishi-plugin-silk": "^1.1.2"
+    "koishi-plugin-silk": "^1.2.0"
   },
   "peerDependencies": {
     "koishi": "^4.17.4"
+  },
+  "koishi": {
+    "description": {
+      "en": "Rewind voice",
+      "zh": "倒放语音"
+    }
   }
 }
