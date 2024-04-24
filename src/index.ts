@@ -15,7 +15,10 @@ export const using = "支持调用指令后发语音和回复语音两种方法"
 export function apply(ctx: Context) {
   ctx.command("倒放语音")
     .usage("支持调用指令后发语音和回复语音两种方法")
-    .action(async ({ session }) => {
+    .option("speed", "-s <speed:number> 设置倍速", {fallback: 1})
+    .action(async ({ session, options }) => {
+      if (options.speed <= 0) return "倍速必须大于0"
+
       let elements
       if (session.quote) {
         elements = session.quote.elements
@@ -44,7 +47,7 @@ export function apply(ctx: Context) {
         const reversedAudio = await ctx.ffmpeg
           .builder()
           .input(input)
-          .outputOption('-af', 'areverse', '-f', 'wav')
+          .outputOption('-f', 'wav', "-af", `areverse,atempo=${options.speed}`)
           .run("buffer")
         if (reversedAudio.length === 0) return "音频倒放失败"
         return h.audio(reversedAudio, type)

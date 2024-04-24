@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-audio-reverse",
   "description": "倒放语音",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
